@@ -1,0 +1,18 @@
+.favourite {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--color-gray-medium);
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.favourite:hover {
+  transform: scale(1.1);
+}
+
+.favourite.active {
+  color: var(--color-primary);
+}

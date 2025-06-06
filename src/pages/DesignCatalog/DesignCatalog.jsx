@@ -1,0 +1,174 @@
+import Button from "../../components/common/Button/Button";
+import Icon from "../../components/common/Icon/Icon";
+import Tag from "../../components/common/Tag/Tag";
+import Favourite from "../../components/common/Favourite/Favourite";
+import RatingStars from "../../components/common/RatingStars/RatingStars";
+import Input from "../../components/common/Input/Input";
+import PriceDisplay from "../../components/common/PriceDisplay/PriceDisplay";
+import LocationInfo from "../../components/common/LocationInfo/LocationInfo";
+import ReviewSummary from "../../components/common/ReviewSummary/ReviewSummary";
+import styles from "./DesignCatalog.module.css";
+
+const DesignCatalog = () => {
+  return (
+    <div className={styles.catalog}>
+      <h1>Design System Catalog</h1>
+
+      <section className={styles.section}>
+        <h2>Color Palette</h2>
+        <div className={styles.row}>
+          <div className={styles.colorBox}>
+            <div
+              className={styles.colorSample}
+              style={{ backgroundColor: "var(--color-primary)" }}
+            ></div>
+            <span>Primary</span>
+            <code>#E44848</code>
+          </div>
+          <div className={styles.colorBox}>
+            <div
+              className={styles.colorSample}
+              style={{ backgroundColor: "var(--color-text)" }}
+            ></div>
+            <span>Text</span>
+            <code>#101828</code>
+          </div>
+          <div className={styles.colorBox}>
+            <div
+              className={styles.colorSample}
+              style={{ backgroundColor: "var(--color-gray)" }}
+            ></div>
+            <span>Gray</span>
+            <code>#DADDE1</code>
+          </div>
+          <div className={styles.colorBox}>
+            <div
+              className={styles.colorSample}
+              style={{ backgroundColor: "var(--color-gray-medium)" }}
+            ></div>
+            <span>Gray Medium</span>
+            <code>#8C8C8C</code>
+          </div>
+          <div className={styles.colorBox}>
+            <div
+              className={styles.colorSample}
+              style={{ backgroundColor: "var(--color-input)" }}
+            ></div>
+            <span>Input</span>
+            <code>#F7F7F7</code>
+          </div>
+          <div className={styles.colorBox}>
+            <div
+              className={styles.colorSample}
+              style={{ backgroundColor: "var(--color-star)" }}
+            ></div>
+            <span>Star</span>
+            <code>#FFC531</code>
+          </div>
+          <div className={styles.colorBox}>
+            <div
+              className={styles.colorSample}
+              style={{ backgroundColor: "var(--color-gray-light)" }}
+            ></div>
+            <span>Gray Light</span>
+            <code>#F2F4F7</code>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Buttons</h2>
+        <div className={styles.row}>
+          <Button variant="primary">Primary Button</Button>
+          <Button variant="secondary">Secondary Button</Button>
+          <Button variant="primary" size="sm">
+            Small
+          </Button>
+          <Button variant="primary" size="lg">
+            Large
+          </Button>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Icons</h2>
+        <div className={styles.row}>
+          <Icon name="heart" />
+          <Icon name="heart" variant="filled" />
+          <Icon name="star" />
+          <Icon name="star" variant="filled" />
+          <Icon name="map" />
+          <Icon name="ac" />
+          <Icon name="kitchen" />
+          <Icon name="tv" />
+          <Icon name="automatic" />
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Tags</h2>
+        <div className={styles.row}>
+          <Tag icon="automatic">Automatic</Tag>
+          <Tag icon="ac">AC</Tag>
+          <Tag icon="kitchen">Kitchen</Tag>
+          <Tag icon="water">Water</Tag>
+          <Tag icon="tv">TV</Tag>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Favourite</h2>
+        <div className={styles.row}>
+          <Favourite isActive={false} />
+          <Favourite isActive={true} />
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Rating Stars</h2>
+        <div className={styles.column}>
+          <RatingStars rating={0} />
+          <RatingStars rating={2.5} />
+          <RatingStars rating={4} />
+          <RatingStars rating={5} />
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Inputs</h2>
+        <div className={styles.column}>
+          <Input placeholder="Name" />
+          <Input placeholder="Email" type="email" />
+          <Input placeholder="Comment" multiline />
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Price Display</h2>
+        <div className={styles.row}>
+          <PriceDisplay amount={8000} />
+          <PriceDisplay amount={12500} />
+          <PriceDisplay amount={999.99} />
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Location Info</h2>
+        <div className={styles.column}>
+          <LocationInfo location="Ukraine, Kyiv" />
+          <LocationInfo location="Poland, Warsaw" />
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Review Summary</h2>
+        <div className={styles.column}>
+          <ReviewSummary rating={4.5} reviewCount={42} />
+          <ReviewSummary rating={3.8} reviewCount={15} showLink={false} />
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default DesignCatalog;

@@ -1,0 +1,20 @@
+.summary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.link {
+  color: var(--color-text);
+  text-decoration: underline;
+  font-size: var(--font-size-button);
+}
+
+.link:hover {
+  color: var(--color-primary);
+}
+
+.count {
+  color: var(--color-text);
+  font-size: var(--font-size-button);
+}

@@ -1,0 +1,25 @@
+.input {
+  width: 100%;
+  padding: var(--spacing-md);
+  background-color: var(--color-input);
+  border: 1px solid var(--color-gray);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family);
+  font-size: var(--font-size-button);
+  color: var(--color-text);
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--color-gray-medium);
+}
+
+.input[type="textarea"] {
+  resize: vertical;
+  min-height: 100px;
+}

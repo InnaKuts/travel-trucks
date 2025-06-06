@@ -1,10 +1,10 @@
+import DesignCatalog from "./pages/DesignCatalog/DesignCatalog";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <h1>TravelTrucks</h1>
-      <p>Camper rental application</p>
+      <DesignCatalog />
     </div>
   );
 }
