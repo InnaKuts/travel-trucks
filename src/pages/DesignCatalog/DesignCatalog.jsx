@@ -209,7 +209,7 @@ const DesignCatalog = () => {
         <h2>Date Picker</h2>
         <div className={styles.column}>
           <DatePicker placeholder="Booking date*" />
-          <DatePicker placeholder="Check-in date" />
+          <DatePicker placeholder="Check-in date" selectedDate={new Date()} />
         </div>
       </section>
 

@@ -28,10 +28,12 @@
   --spacing-md: 16px;
   --spacing-lg: 24px;
   --spacing-xl: 32px;
-  --spacing-xxl: 48px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 36px;
+  --spacing-xxxl: 48px;
 
   /* Border radius */
-  --radius-sm: 10px;
+  --radius-sm: 12px;
   --radius-md: 20px;
   --radius-lg: 200px; /* For buttons */
 }
