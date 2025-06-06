@@ -1,16 +1,17 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import styles from "./DatePicker.module.css";
 
 const DatePicker = ({
   selectedDate,
-  onChange,
+  onDateChange,
   placeholder = "Booking date*",
   className = "",
   ...props
 }) => {
   const [showCalendar, setShowCalendar] = useState(false);
+  const inputRef = useRef(null);
 
   const handleFocus = () => {
     setShowCalendar(true);
@@ -25,8 +26,9 @@ const DatePicker = ({
 
   const handleDateSelect = (date) => {
     if (date) {
-      onChange?.(date);
+      onDateChange?.(date);
       setShowCalendar(false);
+      inputRef.current?.blur();
     }
   };
 
@@ -36,6 +38,7 @@ const DatePicker = ({
   return (
     <div className={`${styles.datePicker} ${className}`}>
       <input
+        ref={inputRef}
         type="text"
         value={value}
         onFocus={handleFocus}

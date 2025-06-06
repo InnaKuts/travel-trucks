@@ -13,6 +13,7 @@ import Loader from "../../components/common/Loader/Loader";
 import ReviewCard from "../../components/common/ReviewCard/ReviewCard";
 import ToggleButton from "../../components/common/ToggleButton/ToggleButton";
 import FeatureDetailsCard from "../../components/common/FeatureDetailsCard/FeatureDetailsCard";
+import BookingFormCard from "../../components/common/BookingFormCard/BookingFormCard";
 import styles from "./DesignCatalog.module.css";
 
 const DesignCatalog = () => {
@@ -276,6 +277,15 @@ const DesignCatalog = () => {
             reviewerName="Bob"
             rating={4}
             comment="Great experience! The camper was clean and well-equipped. Would definitely book again."
+          />
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Booking Form Card</h2>
+        <div className={styles.column}>
+          <BookingFormCard
+            onSubmit={(values) => console.log("Booking submitted:", values)}
           />
         </div>
       </section>
