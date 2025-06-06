@@ -1,0 +1,75 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-xxl);
+  background-color: var(--color-inputs);
+  border-radius: var(--radius-sm);
+  width: 100%;
+}
+
+.equipment {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.vehicleDetailsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.sectionTitle {
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 24px;
+  color: var(--color-main);
+  margin: 0;
+  text-align: left;
+}
+
+.divider {
+  width: 100%;
+  height: 0px;
+  border: 1px solid var(--color-gray-light);
+}
+
+.specs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+.specRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+}
+
+.specLabel {
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: var(--font-weight-medium);
+  line-height: 20px;
+  color: var(--color-main);
+  text-transform: capitalize;
+  text-align: left;
+}
+
+.specValue {
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: var(--font-weight-normal);
+  line-height: 20px;
+  color: var(--color-main);
+  text-align: right;
+}

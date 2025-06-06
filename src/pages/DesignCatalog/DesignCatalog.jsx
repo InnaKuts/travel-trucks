@@ -12,9 +12,33 @@ import LocationInput from "../../components/common/LocationInput/LocationInput";
 import Loader from "../../components/common/Loader/Loader";
 import ReviewCard from "../../components/common/ReviewCard/ReviewCard";
 import ToggleButton from "../../components/common/ToggleButton/ToggleButton";
+import FeatureDetailsCard from "../../components/common/FeatureDetailsCard/FeatureDetailsCard";
 import styles from "./DesignCatalog.module.css";
 
 const DesignCatalog = () => {
+  // Sample data for components
+
+  const sampleCamper = {
+    id: "1",
+    name: "Road Bear C 23-25",
+    form: "alcove",
+    length: "7.3m",
+    width: "2.65m",
+    height: "3.65m",
+    tank: "208l",
+    consumption: "30l/100km",
+    AC: true,
+    automatic: true,
+    kitchen: true,
+    TV: true,
+    bathroom: true,
+    water: true,
+    gas: false,
+    radio: true,
+    refrigerator: false,
+    microwave: true,
+  };
+
   return (
     <div className={styles.catalog}>
       <h1>Design System Catalog</h1>
@@ -221,6 +245,13 @@ const DesignCatalog = () => {
             Fully Integrated
           </ToggleButton>
           <ToggleButton icon="alcove">Alcove</ToggleButton>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Feature Details Card</h2>
+        <div className={styles.column}>
+          <FeatureDetailsCard camper={sampleCamper} />
         </div>
       </section>
 

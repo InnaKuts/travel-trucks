@@ -9,4 +9,5 @@
   font-size: 12px;
   font-weight: var(--font-weight-medium);
   text-transform: capitalize;
+  mix-blend-mode: multiply;
 }
