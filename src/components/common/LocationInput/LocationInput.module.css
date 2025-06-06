@@ -28,12 +28,12 @@
 .input {
   width: 100%;
   padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 40px; /* Left padding for icon */
-  border: 1px solid var(--color-gray);
+  border: none;
   border-radius: var(--radius-sm);
-  font-size: var(--font-size-md);
-  font-family: var(--font-family-primary);
+  font-size: var(--font-size-button);
+  font-family: var(--font-family);
   color: var(--color-main);
-  background-color: var(--color-white);
+  background-color: var(--color-inputs);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   box-sizing: border-box;
 }
@@ -44,10 +44,4 @@
 
 .input:focus {
   outline: none;
-  border-color: var(--color-button);
-  box-shadow: 0 0 0 3px rgba(228, 72, 72, 0.1);
-}
-
-.input.focused {
-  border-color: var(--color-button);
 }

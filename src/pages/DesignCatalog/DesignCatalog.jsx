@@ -25,17 +25,9 @@ const DesignCatalog = () => {
           <div className={styles.colorBox}>
             <div
               className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-button)" }}
-            ></div>
-            <span>Primary</span>
-            <code>#E44848</code>
-          </div>
-          <div className={styles.colorBox}>
-            <div
-              className={styles.colorSample}
               style={{ backgroundColor: "var(--color-main)" }}
             ></div>
-            <span>Text</span>
+            <span>Main</span>
             <code>#101828</code>
           </div>
           <div className={styles.colorBox}>
@@ -43,39 +35,47 @@ const DesignCatalog = () => {
               className={styles.colorSample}
               style={{ backgroundColor: "var(--color-text)" }}
             ></div>
-            <span>Text Light</span>
+            <span>Text</span>
             <code>#475467</code>
-          </div>
-          <div className={styles.colorBox}>
-            <div
-              className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-gray-light)" }}
-            ></div>
-            <span>Gray</span>
-            <code>#DADDE1</code>
           </div>
           <div className={styles.colorBox}>
             <div
               className={styles.colorSample}
               style={{ backgroundColor: "var(--color-gray)" }}
             ></div>
-            <span>Gray Medium</span>
-            <code>#8C8C8C</code>
+            <span>Gray</span>
+            <code>#6C717B</code>
           </div>
           <div className={styles.colorBox}>
             <div
               className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-inputs)" }}
+              style={{ backgroundColor: "var(--color-gray-light)" }}
             ></div>
-            <span>Input</span>
-            <code>#F7F7F7</code>
+            <span>Gray Light</span>
+            <code>#DADDE1</code>
+          </div>
+          <div className={styles.colorBox}>
+            <div
+              className={styles.colorSample}
+              style={{ backgroundColor: "var(--color-button)" }}
+            ></div>
+            <span>Button</span>
+            <code>#E44848</code>
+          </div>
+          <div className={styles.colorBox}>
+            <div
+              className={styles.colorSample}
+              style={{ backgroundColor: "var(--color-button-hover)" }}
+            ></div>
+            <span>Button Hover</span>
+            <code>#D84343</code>
           </div>
           <div className={styles.colorBox}>
             <div
               className={styles.colorSample}
               style={{ backgroundColor: "var(--color-rating)" }}
             ></div>
-            <span>Star</span>
+            <span>Rating</span>
             <code>#FFC531</code>
           </div>
           <div className={styles.colorBox}>
@@ -83,8 +83,24 @@ const DesignCatalog = () => {
               className={styles.colorSample}
               style={{ backgroundColor: "var(--color-badges)" }}
             ></div>
-            <span>Gray Light</span>
+            <span>Badges</span>
             <code>#F2F4F7</code>
+          </div>
+          <div className={styles.colorBox}>
+            <div
+              className={styles.colorSample}
+              style={{ backgroundColor: "var(--color-inputs)" }}
+            ></div>
+            <span>Inputs</span>
+            <code>#F7F7F7</code>
+          </div>
+          <div className={styles.colorBox}>
+            <div
+              className={styles.colorSample}
+              style={{ backgroundColor: "var(--color-white)" }}
+            ></div>
+            <span>White</span>
+            <code>#FFFFFF</code>
           </div>
         </div>
       </section>
