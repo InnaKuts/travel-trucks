@@ -1,0 +1,79 @@
+.datePicker {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  padding: var(--spacing-md);
+  background-color: var(--color-input);
+  border: 1px solid var(--color-gray);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family);
+  font-size: var(--font-size-button);
+  color: var(--color-text);
+  transition: border-color 0.2s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+  min-height: 56px;
+}
+
+.input:hover {
+  border-color: var(--color-primary);
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.input.focused {
+  border-color: var(--color-primary);
+}
+
+/* Placeholder styling */
+.input::placeholder {
+  color: var(--color-gray-medium);
+  font-family: var(--font-family);
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-normal);
+}
+
+/* Hide default date picker styling when in date mode */
+.input::-webkit-calendar-picker-indicator {
+  background: none;
+  cursor: pointer;
+  color: var(--color-gray-medium);
+  font-size: 16px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.input::-webkit-calendar-picker-indicator:hover {
+  color: var(--color-primary);
+  opacity: 1;
+}
+
+/* Style the date input when it has no value */
+.input::-webkit-datetime-edit-text {
+  color: var(--color-gray-medium);
+}
+
+.input::-webkit-datetime-edit-month-field:not([value]),
+.input::-webkit-datetime-edit-day-field:not([value]),
+.input::-webkit-datetime-edit-year-field:not([value]) {
+  color: var(--color-gray-medium);
+}
+
+/* Basic calendar positioning */
+.calendar {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  margin-top: 4px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}

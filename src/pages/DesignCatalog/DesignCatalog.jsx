@@ -7,6 +7,10 @@ import Input from "../../components/common/Input/Input";
 import PriceDisplay from "../../components/common/PriceDisplay/PriceDisplay";
 import LocationInfo from "../../components/common/LocationInfo/LocationInfo";
 import ReviewSummary from "../../components/common/ReviewSummary/ReviewSummary";
+import DatePicker from "../../components/common/DatePicker/DatePicker";
+import Loader from "../../components/common/Loader/Loader";
+import ReviewCard from "../../components/common/ReviewCard/ReviewCard";
+import ToggleButton from "../../components/common/ToggleButton/ToggleButton";
 import styles from "./DesignCatalog.module.css";
 
 const DesignCatalog = () => {
@@ -32,6 +36,14 @@ const DesignCatalog = () => {
             ></div>
             <span>Text</span>
             <code>#101828</code>
+          </div>
+          <div className={styles.colorBox}>
+            <div
+              className={styles.colorSample}
+              style={{ backgroundColor: "var(--color-text-light)" }}
+            ></div>
+            <span>Text Light</span>
+            <code>#475467</code>
           </div>
           <div className={styles.colorBox}>
             <div
@@ -165,6 +177,50 @@ const DesignCatalog = () => {
         <div className={styles.column}>
           <ReviewSummary rating={4.5} reviewCount={42} />
           <ReviewSummary rating={3.8} reviewCount={15} showLink={false} />
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Date Picker</h2>
+        <div className={styles.column}>
+          <DatePicker placeholder="Booking date*" />
+          <DatePicker placeholder="Check-in date" />
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Toggle Buttons</h2>
+        <div className={styles.row}>
+          <ToggleButton icon="van">Van</ToggleButton>
+          <ToggleButton icon="intergrated" isSelected>
+            Fully Integrated
+          </ToggleButton>
+          <ToggleButton icon="alcove">Alcove</ToggleButton>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Loader</h2>
+        <div className={styles.column}>
+          <Loader />
+          <Loader text="Loading campers..." />
+          <Loader size={24} text="Please wait..." />
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Review Card</h2>
+        <div className={styles.column}>
+          <ReviewCard
+            reviewerName="Alice"
+            rating={5}
+            comment="The Mavericks panel truck was a perfect choice for my solo road trip. Compact, easy to drive, and had all the essentials. The kitchen facilities were sufficient, and the overall experience was fantastic."
+          />
+          <ReviewCard
+            reviewerName="Bob"
+            rating={4}
+            comment="Great experience! The camper was clean and well-equipped. Would definitely book again."
+          />
         </div>
       </section>
     </div>
