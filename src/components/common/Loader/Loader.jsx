@@ -3,7 +3,7 @@ import styles from "./Loader.module.css";
 
 const Loader = ({
   size = 40,
-  color = "var(--color-primary)",
+  color = "var(--color-button)",
   loading = true,
   text = "",
   className = "",

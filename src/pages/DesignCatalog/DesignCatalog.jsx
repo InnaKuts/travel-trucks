@@ -8,6 +8,7 @@ import PriceDisplay from "../../components/common/PriceDisplay/PriceDisplay";
 import LocationInfo from "../../components/common/LocationInfo/LocationInfo";
 import ReviewSummary from "../../components/common/ReviewSummary/ReviewSummary";
 import DatePicker from "../../components/common/DatePicker/DatePicker";
+import LocationInput from "../../components/common/LocationInput/LocationInput";
 import Loader from "../../components/common/Loader/Loader";
 import ReviewCard from "../../components/common/ReviewCard/ReviewCard";
 import ToggleButton from "../../components/common/ToggleButton/ToggleButton";
@@ -24,7 +25,7 @@ const DesignCatalog = () => {
           <div className={styles.colorBox}>
             <div
               className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-primary)" }}
+              style={{ backgroundColor: "var(--color-button)" }}
             ></div>
             <span>Primary</span>
             <code>#E44848</code>
@@ -32,7 +33,7 @@ const DesignCatalog = () => {
           <div className={styles.colorBox}>
             <div
               className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-text)" }}
+              style={{ backgroundColor: "var(--color-main)" }}
             ></div>
             <span>Text</span>
             <code>#101828</code>
@@ -40,7 +41,7 @@ const DesignCatalog = () => {
           <div className={styles.colorBox}>
             <div
               className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-text-light)" }}
+              style={{ backgroundColor: "var(--color-text)" }}
             ></div>
             <span>Text Light</span>
             <code>#475467</code>
@@ -48,7 +49,7 @@ const DesignCatalog = () => {
           <div className={styles.colorBox}>
             <div
               className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-gray)" }}
+              style={{ backgroundColor: "var(--color-gray-light)" }}
             ></div>
             <span>Gray</span>
             <code>#DADDE1</code>
@@ -56,7 +57,7 @@ const DesignCatalog = () => {
           <div className={styles.colorBox}>
             <div
               className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-gray-medium)" }}
+              style={{ backgroundColor: "var(--color-gray)" }}
             ></div>
             <span>Gray Medium</span>
             <code>#8C8C8C</code>
@@ -64,7 +65,7 @@ const DesignCatalog = () => {
           <div className={styles.colorBox}>
             <div
               className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-input)" }}
+              style={{ backgroundColor: "var(--color-inputs)" }}
             ></div>
             <span>Input</span>
             <code>#F7F7F7</code>
@@ -72,7 +73,7 @@ const DesignCatalog = () => {
           <div className={styles.colorBox}>
             <div
               className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-star)" }}
+              style={{ backgroundColor: "var(--color-rating)" }}
             ></div>
             <span>Star</span>
             <code>#FFC531</code>
@@ -80,7 +81,7 @@ const DesignCatalog = () => {
           <div className={styles.colorBox}>
             <div
               className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-gray-light)" }}
+              style={{ backgroundColor: "var(--color-badges)" }}
             ></div>
             <span>Gray Light</span>
             <code>#F2F4F7</code>
@@ -177,6 +178,14 @@ const DesignCatalog = () => {
         <div className={styles.column}>
           <ReviewSummary rating={4.5} reviewCount={42} />
           <ReviewSummary rating={3.8} reviewCount={15} showLink={false} />
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Location Input</h2>
+        <div className={styles.column}>
+          <LocationInput placeholder="City" />
+          <LocationInput placeholder="City" value="Kyiv, Ukraine" />
         </div>
       </section>
 

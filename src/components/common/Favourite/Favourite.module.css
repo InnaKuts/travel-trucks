@@ -4,7 +4,7 @@
   justify-content: center;
   background: none;
   border: none;
-  color: var(--color-gray-medium);
+  color: var(--color-main);
   cursor: pointer;
   transition: color 0.2s ease, transform 0.1s ease;
 }
@@ -14,5 +14,5 @@
 }
 
 .favourite.active {
-  color: var(--color-primary);
+  color: var(--color-button);
 }

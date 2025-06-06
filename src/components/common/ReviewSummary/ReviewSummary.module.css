@@ -5,16 +5,16 @@
 }
 
 .link {
-  color: var(--color-text);
+  color: var(--color-main);
   text-decoration: underline;
   font-size: var(--font-size-button);
 }
 
 .link:hover {
-  color: var(--color-primary);
+  color: var(--color-button);
 }
 
 .count {
-  color: var(--color-text);
+  color: var(--color-main);
   font-size: var(--font-size-button);
 }

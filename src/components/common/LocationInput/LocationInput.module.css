@@ -1,0 +1,53 @@
+.locationInput {
+  position: relative;
+  width: 100%;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  position: absolute;
+  left: var(--spacing-md);
+  z-index: 1;
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.iconPlaceholder {
+  color: var(--color-gray); /* Placeholder icon color */
+}
+
+.iconActive {
+  color: var(--color-main);
+}
+
+.input {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 40px; /* Left padding for icon */
+  border: 1px solid var(--color-gray);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-md);
+  font-family: var(--font-family-primary);
+  color: var(--color-main);
+  background-color: var(--color-white);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: var(--color-gray); /* Placeholder text color */
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-button);
+  box-shadow: 0 0 0 3px rgba(228, 72, 72, 0.1);
+}
+
+.input.focused {
+  border-color: var(--color-button);
+}

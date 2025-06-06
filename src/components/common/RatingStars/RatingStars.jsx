@@ -11,7 +11,7 @@ const RatingStars = ({ rating = 0, size = "md", className = "" }) => {
         name="star"
         variant={i <= rating ? "filled" : "default"}
         size={size}
-        color={i <= rating ? "var(--color-star)" : "var(--color-gray)"}
+        color={i <= rating ? "var(--color-rating)" : "var(--color-gray-light)"}
       />
     );
   }

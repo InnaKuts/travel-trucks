@@ -6,12 +6,12 @@
 .input {
   width: 100%;
   padding: var(--spacing-md);
-  background-color: var(--color-input);
-  border: 1px solid var(--color-gray);
+  background-color: var(--color-inputs);
+  border: 1px solid var(--color-gray-light);
   border-radius: var(--radius-sm);
   font-family: var(--font-family);
   font-size: var(--font-size-button);
-  color: var(--color-text);
+  color: var(--color-main);
   transition: border-color 0.2s ease;
   cursor: pointer;
   box-sizing: border-box;
@@ -19,21 +19,21 @@
 }
 
 .input:hover {
-  border-color: var(--color-primary);
+  border-color: var(--color-button);
 }
 
 .input:focus {
-  border-color: var(--color-primary);
+  border-color: var(--color-button);
   outline: none;
 }
 
 .input.focused {
-  border-color: var(--color-primary);
+  border-color: var(--color-button);
 }
 
 /* Placeholder styling */
 .input::placeholder {
-  color: var(--color-gray-medium);
+  color: var(--color-gray);
   font-family: var(--font-family);
   font-size: var(--font-size-button);
   font-weight: var(--font-weight-normal);
@@ -43,26 +43,26 @@
 .input::-webkit-calendar-picker-indicator {
   background: none;
   cursor: pointer;
-  color: var(--color-gray-medium);
+  color: var(--color-gray);
   font-size: 16px;
   opacity: 0.7;
   transition: opacity 0.2s ease;
 }
 
 .input::-webkit-calendar-picker-indicator:hover {
-  color: var(--color-primary);
+  color: var(--color-button);
   opacity: 1;
 }
 
 /* Style the date input when it has no value */
 .input::-webkit-datetime-edit-text {
-  color: var(--color-gray-medium);
+  color: var(--color-gray);
 }
 
 .input::-webkit-datetime-edit-month-field:not([value]),
 .input::-webkit-datetime-edit-day-field:not([value]),
 .input::-webkit-datetime-edit-year-field:not([value]) {
-  color: var(--color-gray-medium);
+  color: var(--color-gray);
 }
 
 /* Basic calendar positioning */

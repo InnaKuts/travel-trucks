@@ -7,10 +7,10 @@
   gap: var(--spacing-sm);
   min-width: 112px;
   height: 96px;
-  border: 1px solid var(--color-gray);
+  border: 1px solid var(--color-gray-light);
   border-radius: var(--radius-sm);
   background-color: var(--color-white);
-  color: var(--color-text);
+  color: var(--color-main);
   font-family: var(--font-family);
   font-size: var(--font-size-button);
   font-weight: var(--font-weight-normal);
@@ -20,13 +20,13 @@
 }
 
 .button:hover {
-  border-color: var(--color-primary);
+  border-color: var(--color-button);
 }
 
 .button.selected {
-  border-color: var(--color-primary);
+  border-color: var(--color-button);
   background-color: var(--color-white);
-  color: var(--color-text);
+  color: var(--color-main);
 }
 
 .content {

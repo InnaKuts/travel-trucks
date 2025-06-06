@@ -16,7 +16,7 @@ html {
 body {
   font-family: var(--font-family);
   font-weight: var(--font-weight-normal);
-  color: var(--color-text);
+  color: var(--color-main);
   background-color: var(--color-white);
   line-height: 1.5;
   min-height: 100vh;

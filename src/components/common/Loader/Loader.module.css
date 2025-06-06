@@ -8,7 +8,7 @@
 }
 
 .text {
-  color: var(--color-gray-medium);
+  color: var(--color-gray);
   font-size: var(--font-size-button);
   text-align: center;
   margin: 0;
