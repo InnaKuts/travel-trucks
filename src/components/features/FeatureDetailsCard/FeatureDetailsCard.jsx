@@ -1,4 +1,4 @@
-import Tag from "../Tag/Tag";
+import Tag from "../../common/Tag/Tag";
 import styles from "./FeatureDetailsCard.module.css";
 
 const FeatureDetailsCard = ({ camper, className = "" }) => {

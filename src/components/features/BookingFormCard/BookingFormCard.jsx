@@ -2,9 +2,9 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import toast from "react-hot-toast";
 import { useEffect } from "react";
-import Input from "../Input/Input";
-import DatePicker from "../DatePicker/DatePicker";
-import Button from "../Button/Button";
+import Input from "../../common/Input/Input";
+import DatePicker from "../../composite/DatePicker/DatePicker";
+import Button from "../../common/Button/Button";
 import styles from "./BookingFormCard.module.css";
 
 const BookingFormCard = ({ onSubmit, className = "" }) => {

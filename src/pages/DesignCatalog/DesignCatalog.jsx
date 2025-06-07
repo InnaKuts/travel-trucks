@@ -2,18 +2,18 @@ import Button from "../../components/common/Button/Button";
 import Icon from "../../components/common/Icon/Icon";
 import Tag from "../../components/common/Tag/Tag";
 import Favourite from "../../components/common/Favourite/Favourite";
-import RatingStars from "../../components/common/RatingStars/RatingStars";
 import Input from "../../components/common/Input/Input";
-import PriceDisplay from "../../components/common/PriceDisplay/PriceDisplay";
-import LocationInfo from "../../components/common/LocationInfo/LocationInfo";
-import ReviewSummary from "../../components/common/ReviewSummary/ReviewSummary";
-import DatePicker from "../../components/common/DatePicker/DatePicker";
-import LocationInput from "../../components/common/LocationInput/LocationInput";
 import Loader from "../../components/common/Loader/Loader";
-import ReviewCard from "../../components/common/ReviewCard/ReviewCard";
-import ToggleButton from "../../components/common/ToggleButton/ToggleButton";
-import FeatureDetailsCard from "../../components/common/FeatureDetailsCard/FeatureDetailsCard";
-import BookingFormCard from "../../components/common/BookingFormCard/BookingFormCard";
+import RatingStars from "../../components/composite/RatingStars/RatingStars";
+import PriceDisplay from "../../components/composite/PriceDisplay/PriceDisplay";
+import LocationInfo from "../../components/composite/LocationInfo/LocationInfo";
+import ReviewSummary from "../../components/composite/ReviewSummary/ReviewSummary";
+import DatePicker from "../../components/composite/DatePicker/DatePicker";
+import LocationInput from "../../components/composite/LocationInput/LocationInput";
+import ReviewCard from "../../components/composite/ReviewCard/ReviewCard";
+import ToggleButton from "../../components/composite/ToggleButton/ToggleButton";
+import FeatureDetailsCard from "../../components/features/FeatureDetailsCard/FeatureDetailsCard";
+import BookingFormCard from "../../components/features/BookingFormCard/BookingFormCard";
 import styles from "./DesignCatalog.module.css";
 
 const DesignCatalog = () => {

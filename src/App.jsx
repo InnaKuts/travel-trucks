@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AppNavigation from "./components/common/AppNavigation/AppNavigation";
+import AppNavigation from "./components/features/AppNavigation/AppNavigation";
 import DesignCatalog from "./pages/DesignCatalog/DesignCatalog";
 import "./App.css";
 

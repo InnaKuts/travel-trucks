@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Icon from "../Icon/Icon";
+import Icon from "../../common/Icon/Icon";
 import styles from "./LocationInput.module.css";
 
 const LocationInput = ({
