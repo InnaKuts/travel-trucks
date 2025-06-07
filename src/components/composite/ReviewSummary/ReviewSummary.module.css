@@ -9,9 +9,14 @@
 }
 
 .link {
+  background: none;
+  border: none;
+  padding: 0;
   color: var(--color-main);
   text-decoration: underline;
   font-size: var(--font-size-button);
+  font-family: var(--font-family);
+  cursor: pointer;
 }
 
 .link:hover {

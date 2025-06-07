@@ -52,6 +52,10 @@ const VehicleCard = ({ camper, onShowMore, className = "" }) => {
     dispatch(toggleFavorite(camper.id));
   };
 
+  const handleReviewsClick = () => {
+    navigate(`/catalog/${camper.id}#reviews`);
+  };
+
   return (
     <div className={`${styles.card} ${className}`}>
       {/* Image Section */}
@@ -81,6 +85,7 @@ const VehicleCard = ({ camper, onShowMore, className = "" }) => {
             rating={camper.rating}
             reviewCount={camper.reviews?.length || 0}
             showLink={true}
+            onReviewsClick={handleReviewsClick}
           />
           <LocationInfo location={camper.location} />
         </div>

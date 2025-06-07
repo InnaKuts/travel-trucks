@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import AppNavigation from "../../components/features/AppNavigation/AppNavigation";
 import ReviewSummary from "../../components/composite/ReviewSummary/ReviewSummary";
@@ -19,8 +19,33 @@ import styles from "./Details.module.css";
 
 const Details = () => {
   const { id } = useParams();
+  const location = useLocation();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [activeTab, setActiveTab] = useState("Features");
+
+  // Determine initial tab from hash
+  const getInitialTab = () => {
+    const hash = location.hash.substring(1); // Remove the # symbol
+    return hash === "reviews" ? "Reviews" : "Features";
+  };
+
+  const [activeTab, setActiveTab] = useState(getInitialTab());
+
+  // Handle tab change with URL hash update
+  const handleTabChange = (tabName) => {
+    setActiveTab(tabName);
+    const hash = tabName === "Reviews" ? "#reviews" : "";
+    navigate(`/catalog/${id}${hash}`, { replace: true });
+  };
+
+  // Listen for hash changes (browser back/forward)
+  useEffect(() => {
+    const hash = location.hash.substring(1);
+    const newTab = hash === "reviews" ? "Reviews" : "Features";
+    if (newTab !== activeTab) {
+      setActiveTab(newTab);
+    }
+  }, [location.hash, activeTab]);
 
   // Redux selectors
   const camper = useSelector(selectCurrentCamper);
@@ -119,7 +144,7 @@ const Details = () => {
             className={`${styles.tabButton} ${
               activeTab === "Features" ? styles.activeTab : ""
             }`}
-            onClick={() => setActiveTab("Features")}
+            onClick={() => handleTabChange("Features")}
           >
             Features
           </button>
@@ -127,7 +152,7 @@ const Details = () => {
             className={`${styles.tabButton} ${
               activeTab === "Reviews" ? styles.activeTab : ""
             }`}
-            onClick={() => setActiveTab("Reviews")}
+            onClick={() => handleTabChange("Reviews")}
           >
             Reviews
           </button>

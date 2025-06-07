@@ -5,15 +5,16 @@ const ReviewSummary = ({
   rating,
   reviewCount,
   showLink = true,
+  onReviewsClick,
   className = "",
 }) => {
   return (
     <div className={`${styles.summary} ${className}`}>
       <Icon name="star" variant="filled" className={styles.star} />
       {showLink ? (
-        <a href="#reviews" className={styles.link}>
+        <button type="button" className={styles.link} onClick={onReviewsClick}>
           {rating} ({reviewCount} Reviews)
-        </a>
+        </button>
       ) : (
         <span className={styles.count}>
           {rating} ({reviewCount} Reviews)
