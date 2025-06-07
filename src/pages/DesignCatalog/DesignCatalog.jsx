@@ -14,6 +14,7 @@ import ReviewCard from "../../components/composite/ReviewCard/ReviewCard";
 import ToggleButton from "../../components/composite/ToggleButton/ToggleButton";
 import FeatureDetailsCard from "../../components/features/FeatureDetailsCard/FeatureDetailsCard";
 import BookingFormCard from "../../components/features/BookingFormCard/BookingFormCard";
+import VehicleCard from "../../components/features/VehicleCard/VehicleCard";
 import styles from "./DesignCatalog.module.css";
 
 const DesignCatalog = () => {
@@ -22,6 +23,11 @@ const DesignCatalog = () => {
   const sampleCamper = {
     id: "1",
     name: "Road Bear C 23-25",
+    price: 10000,
+    rating: 4.5,
+    location: "Ukraine, Kyiv",
+    description:
+      "Embrace simplicity and freedom with the Road Bear C 23-25. This well-equipped alcove offers a perfect blend of comfort and functionality for your adventures.",
     form: "alcove",
     length: "7.3m",
     width: "2.65m",
@@ -38,6 +44,16 @@ const DesignCatalog = () => {
     radio: true,
     refrigerator: false,
     microwave: true,
+    reviews: [
+      { reviewer_name: "Alice", reviewer_rating: 5, comment: "Great camper!" },
+      { reviewer_name: "Bob", reviewer_rating: 4, comment: "Good experience" },
+    ],
+    gallery: [
+      {
+        thumb: "https://ftp.goit.study/img/campers-test-task/1-1.webp",
+        original: "https://ftp.goit.study/img/campers-test-task/1-1.webp",
+      },
+    ],
   };
 
   return (
@@ -286,6 +302,18 @@ const DesignCatalog = () => {
         <div className={styles.column}>
           <BookingFormCard
             onSubmit={(values) => console.log("Booking submitted:", values)}
+          />
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Vehicle Card</h2>
+        <div className={styles.column}>
+          <VehicleCard
+            camper={sampleCamper}
+            onShowMore={(id) =>
+              console.log(`Show more clicked for camper: ${id}`)
+            }
           />
         </div>
       </section>

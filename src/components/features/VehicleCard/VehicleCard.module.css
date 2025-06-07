@@ -1,0 +1,109 @@
+/* HStack - horizontal card layout */
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Image Section - aspect ratio 292/320 ≈ 0.9125 */
+.imageContainer {
+  flex-shrink: 0;
+  width: 292px;
+  height: 320px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.imagePlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-inputs);
+  color: var(--color-gray);
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: var(--font-weight-medium);
+}
+
+/* VStack - vertical content layout */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  flex: 1;
+  height: 320px;
+  justify-content: flex-start;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Header row: Name + Spacer + Price + Favourite */
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: var(--spacing-md);
+}
+
+.name {
+  font-family: var(--font-family);
+  font-size: 24px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 32px;
+  color: var(--color-main);
+  margin: 0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+/* Review/location row */
+.reviewLocationRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+/* Description - single line with ellipsis */
+.description {
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: var(--font-weight-normal);
+  line-height: 24px;
+  color: var(--color-text);
+  margin: 0;
+  width: 100%;
+  min-width: 0;
+
+  /* Single line with ellipsis */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* WrapRow - equipment tags */
+.equipment {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  align-items: flex-start;
+  width: 100%;
+  min-width: 0;
+}
