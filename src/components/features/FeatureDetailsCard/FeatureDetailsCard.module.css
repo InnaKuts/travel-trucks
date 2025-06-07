@@ -5,6 +5,8 @@
   background-color: var(--color-inputs);
   border-radius: var(--radius-sm);
   width: 100%;
+  min-height: 556px;
+  justify-content: space-between;
 }
 
 .equipment {
@@ -14,7 +16,6 @@
   align-items: flex-start;
   align-content: flex-start;
   width: 100%;
-  margin-bottom: 100px;
 }
 
 .vehicleDetailsSection {
@@ -72,4 +73,13 @@
   line-height: 20px;
   color: var(--color-main);
   text-align: right;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .card {
+    min-height: auto; /* Remove fixed height on tablet/mobile */
+    justify-content: flex-start;
+    gap: var(--spacing-xl);
+  }
 }

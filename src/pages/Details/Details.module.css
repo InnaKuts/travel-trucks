@@ -126,8 +126,16 @@
   max-width: 1312px;
 }
 
-/* Main Content HStack - remaining height */
-.mainContent {
+/* Tab Section - Full Width */
+.tabSection {
+  padding: 48px 64px 0;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Content Section HStack - 50% ActiveTab + 50% Booking */
+.contentSection {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -135,24 +143,17 @@
   gap: 40px;
   width: 100%;
   max-width: 1440px;
+  margin: 0 auto;
   flex: 1;
 }
 
-/* TabControl - 50% width */
-.tabControl {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--spacing-lg);
-  width: 50%;
-}
-
-/* Tab Headers */
+/* Tab Headers - Leading alignment */
 .tabHeaders {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   gap: 40px;
+  margin-bottom: var(--spacing-lg);
 }
 
 .tabButton {
@@ -202,9 +203,9 @@
   left: 125px; /* 85px + 40px gap for second tab */
 }
 
-/* Tab Content */
+/* Tab Content - 50% width */
 .tabContent {
-  width: 100%;
+  width: 50%;
 }
 
 .reviewsList {
@@ -225,13 +226,17 @@
     padding: 32px 32px 0;
   }
 
-  .mainContent {
+  .tabSection {
+    padding: 32px 32px 0;
+  }
+
+  .contentSection {
     padding: 32px 32px;
     flex-direction: column;
     gap: 32px;
   }
 
-  .tabControl,
+  .tabContent,
   .bookingSection {
     width: 100%;
     max-width: none;
@@ -253,7 +258,11 @@
     padding: 24px 16px 0;
   }
 
-  .mainContent {
+  .tabSection {
+    padding: 24px 16px 0;
+  }
+
+  .contentSection {
     padding: 24px 16px;
   }
 

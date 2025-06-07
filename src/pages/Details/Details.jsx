@@ -111,57 +111,57 @@ const Details = () => {
         <p className={styles.description}>{camper?.description}</p>
       </div>
 
-      {/* Main Content HStack */}
-      <div className={styles.mainContent}>
-        {/* TabControl - 50% width */}
-        <div className={styles.tabControl}>
-          {/* Tab Headers */}
-          <div className={styles.tabHeaders}>
-            <button
-              className={`${styles.tabButton} ${
-                activeTab === "Features" ? styles.activeTab : ""
-              }`}
-              onClick={() => setActiveTab("Features")}
-            >
-              Features
-            </button>
-            <button
-              className={`${styles.tabButton} ${
-                activeTab === "Reviews" ? styles.activeTab : ""
-              }`}
-              onClick={() => setActiveTab("Reviews")}
-            >
-              Reviews
-            </button>
-          </div>
+      {/* Tab Section - Full Width */}
+      <div className={styles.tabSection}>
+        {/* Tab Headers - Leading alignment */}
+        <div className={styles.tabHeaders}>
+          <button
+            className={`${styles.tabButton} ${
+              activeTab === "Features" ? styles.activeTab : ""
+            }`}
+            onClick={() => setActiveTab("Features")}
+          >
+            Features
+          </button>
+          <button
+            className={`${styles.tabButton} ${
+              activeTab === "Reviews" ? styles.activeTab : ""
+            }`}
+            onClick={() => setActiveTab("Reviews")}
+          >
+            Reviews
+          </button>
+        </div>
 
-          {/* Tab Divider */}
-          <div className={styles.tabDivider}>
-            <div
-              className={`${styles.activeIndicator} ${
-                activeTab === "Features"
-                  ? styles.featuresActive
-                  : styles.reviewsActive
-              }`}
-            />
-          </div>
+        {/* Tab Divider - 100% width */}
+        <div className={styles.tabDivider}>
+          <div
+            className={`${styles.activeIndicator} ${
+              activeTab === "Features"
+                ? styles.featuresActive
+                : styles.reviewsActive
+            }`}
+          />
+        </div>
+      </div>
 
-          {/* Tab Content */}
-          <div className={styles.tabContent}>
-            {activeTab === "Features" && <FeatureDetailsCard camper={camper} />}
-            {activeTab === "Reviews" && (
-              <div className={styles.reviewsList}>
-                {camper?.reviews?.map((review, index) => (
-                  <ReviewCard
-                    key={index}
-                    reviewerName={review.reviewer_name}
-                    rating={review.reviewer_rating}
-                    comment={review.comment}
-                  />
-                ))}
-              </div>
-            )}
-          </div>
+      {/* Content HStack - 50% ActiveTab + 50% Booking */}
+      <div className={styles.contentSection}>
+        {/* Active Tab Content - 50% width */}
+        <div className={styles.tabContent}>
+          {activeTab === "Features" && <FeatureDetailsCard camper={camper} />}
+          {activeTab === "Reviews" && (
+            <div className={styles.reviewsList}>
+              {camper?.reviews?.map((review, index) => (
+                <ReviewCard
+                  key={index}
+                  reviewerName={review.reviewer_name}
+                  rating={review.reviewer_rating}
+                  comment={review.comment}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
         {/* BookingFormCard - 50% width */}

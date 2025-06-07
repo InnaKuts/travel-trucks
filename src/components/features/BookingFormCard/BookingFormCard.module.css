@@ -17,7 +17,6 @@
   align-items: flex-start;
   gap: 8px;
   width: 100%;
-  max-width: 527px;
 }
 
 .title {
@@ -47,7 +46,6 @@
   align-items: center;
   gap: 24px;
   width: 100%;
-  max-width: 527px;
 }
 
 .inputs {
