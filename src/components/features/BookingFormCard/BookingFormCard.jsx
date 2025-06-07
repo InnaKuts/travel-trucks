@@ -30,6 +30,7 @@ const BookingFormCard = ({ onSubmit, className = "" }) => {
       comment: Yup.string().trim(),
     }),
     onSubmit: (values, { setSubmitting, resetForm }) => {
+      toast.dismiss();
       try {
         onSubmit?.(values);
         toast.success("Booking request sent successfully!");
@@ -48,10 +49,11 @@ const BookingFormCard = ({ onSubmit, className = "" }) => {
 
   useEffect(() => {
     const errors = Object.values(formik.errors);
-    if (errors.length > 0 && formik.submitCount > 0) {
-      errors.forEach((error) => toast.error(error));
+    if (errors.length > 0) {
+      toast.dismiss();
+      toast.error(errors[0]);
     }
-  }, [formik.errors, formik.submitCount]);
+  }, [formik.errors]);
 
   const handleDateChange = (date) => {
     formik.setFieldValue("bookingDate", date);
