@@ -8,8 +8,7 @@ const loadFavoritesFromStorage = () => {
   try {
     const saved = localStorage.getItem(FAVORITES_STORAGE_KEY);
     return saved ? JSON.parse(saved) : [];
-  } catch (error) {
-    console.warn("Failed to load favorites from localStorage:", error);
+  } catch {
     return [];
   }
 };
@@ -17,8 +16,8 @@ const loadFavoritesFromStorage = () => {
 const saveFavoritesToStorage = (favoriteIds) => {
   try {
     localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(favoriteIds));
-  } catch (error) {
-    console.warn("Failed to save favorites to localStorage:", error);
+  } catch {
+    return;
   }
 };
 

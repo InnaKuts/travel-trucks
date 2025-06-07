@@ -22,7 +22,6 @@ apiClient.interceptors.response.use(
     if (error.response) {
       // Server responded with error status
       const { status, data } = error.response;
-      console.error(`API Error ${status}:`, data);
 
       // Customize error messages based on status
       switch (status) {
@@ -40,11 +39,7 @@ apiClient.interceptors.response.use(
       }
     } else if (error.request) {
       // Network error
-      console.error("Network error:", error.request);
       error.message = "Network error - please check your connection";
-    } else {
-      // Something else went wrong
-      console.error("Error:", error.message);
     }
 
     return Promise.reject(error);
