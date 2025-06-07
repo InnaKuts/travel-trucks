@@ -15,6 +15,7 @@ import ToggleButton from "../../components/composite/ToggleButton/ToggleButton";
 import FeatureDetailsCard from "../../components/features/FeatureDetailsCard/FeatureDetailsCard";
 import BookingFormCard from "../../components/features/BookingFormCard/BookingFormCard";
 import VehicleCard from "../../components/features/VehicleCard/VehicleCard";
+import { FiltersSidebar } from "../../components/features/FiltersSidebar/FiltersSidebar";
 import styles from "./DesignCatalog.module.css";
 
 const DesignCatalog = () => {
@@ -314,6 +315,33 @@ const DesignCatalog = () => {
             onShowMore={(id) =>
               console.log(`Show more clicked for camper: ${id}`)
             }
+          />
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Filters Sidebar</h2>
+        <div className={styles.column}>
+          <FiltersSidebar
+            location="Ukraine, Kyiv"
+            equipment={{
+              AC: true,
+              automatic: false,
+              kitchen: true,
+              TV: false,
+              bathroom: true,
+            }}
+            vehicleType="panelTruck"
+            onLocationChange={(location) =>
+              console.log("Location changed:", location)
+            }
+            onEquipmentToggle={(equipment) =>
+              console.log("Equipment toggled:", equipment)
+            }
+            onVehicleTypeChange={(type) =>
+              console.log("Vehicle type changed:", type)
+            }
+            onSearch={() => console.log("Search clicked")}
           />
         </div>
       </section>

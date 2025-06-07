@@ -17,6 +17,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   text-align: center;
+  width: 112px;
 }
 
 .button:hover {

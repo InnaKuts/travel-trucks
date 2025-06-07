@@ -1,0 +1,75 @@
+/* Main VStack - Fixed width, 40px gap */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 360px;
+  align-items: flex-start;
+}
+
+/* Location Section - VStack 100% width, 16px gap */
+.locationSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+/* Location label - Subtle font */
+.labelSubtle {
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: var(--font-weight-normal); /* 400 */
+  color: var(--color-gray);
+  margin: 0;
+}
+
+/* Filters Section - VStack 100% width, 32px gap */
+.filtersSection {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+
+/* Filters title - Subtle font (only slightly different from Location) */
+.filtersTitle {
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* Filter Group - VStack 100% width, 24px gap */
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Group titles - Main font */
+.groupTitle {
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: var(--font-weight-semibold); /* 600 */
+  color: var(--color-main);
+  margin: 0;
+}
+
+/* Vertical Divider */
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-gray-light);
+  border: none;
+}
+
+/* Toggle Grid - Wrapping row */
+.toggleGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+}
