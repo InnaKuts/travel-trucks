@@ -149,3 +149,17 @@ export const { resetCampers, clearCurrentCamper, clearErrors } =
   campersSlice.actions;
 
 export default campersSlice.reducer;
+
+// Selectors
+export const selectCampers = (state) => state.campers.campers;
+export const selectCurrentCamper = (state) => state.campers.currentCamper;
+export const selectCampersLoading = (state) => state.campers.loading;
+export const selectCampersLoadingMore = (state) => state.campers.loadingMore;
+export const selectCamperLoading = (state) => state.campers.loadingCamper;
+export const selectCampersError = (state) => state.campers.error;
+export const selectCamperError = (state) => state.campers.camperError;
+export const selectCurrentPage = (state) => state.campers.pagination.page;
+export const selectHasMore = (state) => state.campers.pagination.hasMore;
+export const selectTotalPages = (state) =>
+  Math.ceil(state.campers.pagination.total / state.campers.pagination.limit);
+export const selectPagination = (state) => state.campers.pagination;

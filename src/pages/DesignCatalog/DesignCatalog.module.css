@@ -6,7 +6,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: var(--spacing-xl);
-  padding-top: 96px; /* Account for navigation height */
+  padding-top: calc(72px + var(--spacing-xl));
 }
 
 .catalog h1 {

@@ -6,11 +6,12 @@ const Button = ({
   size = "md",
   onClick,
   type = "button",
+  className = "",
   ...props
 }) => {
   return (
     <button
-      className={`${styles.button} ${styles[variant]} ${styles[size]}`}
+      className={`${styles.button} ${styles[variant]} ${styles[size]} ${className}`}
       onClick={onClick}
       type={type}
       {...props}
