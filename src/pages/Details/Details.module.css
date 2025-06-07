@@ -1,0 +1,287 @@
+/* Details Page - VStack(alignment: top-center, size: 100%) */
+.detailsPage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 72px; /* AppNavigation height */
+}
+
+.loadingState,
+.errorState {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.errorState h2 {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-h2);
+  line-height: 32px;
+  color: var(--color-main);
+  margin-bottom: var(--spacing-md);
+}
+
+.errorState p {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-button);
+  line-height: 24px;
+  color: var(--color-text);
+}
+
+/* Details Header - VStack(alignment: leading, size: 100%) */
+.detailsHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 48px 64px 0;
+  gap: var(--spacing-md);
+  width: 100%;
+  max-width: 1440px;
+}
+
+/* Title - Text("Mavericks", font: page-title) */
+.camperTitle {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-h2);
+  line-height: 32px;
+  color: var(--color-main);
+  margin: 0;
+}
+
+/* HStack for ReviewSummary and LocationInfo */
+.reviewLocationStack {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+
+/* Images HStack - horizontally scrollable with 48px gap */
+.imageGallery {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 48px;
+  width: 100%;
+  max-width: 1312px;
+  margin: var(--spacing-md) 0;
+  overflow-x: auto;
+  padding-bottom: 8px; /* Space for scrollbar */
+}
+
+/* Custom horizontal scrollbar styling */
+.imageGallery::-webkit-scrollbar {
+  height: 6px;
+}
+
+.imageGallery::-webkit-scrollbar-track {
+  background: var(--color-inputs);
+  border-radius: 3px;
+}
+
+.imageGallery::-webkit-scrollbar-thumb {
+  background: var(--color-gray-light);
+  border-radius: 3px;
+}
+
+.imageGallery::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray);
+}
+
+.imageContainer {
+  max-width: 292px;
+  width: auto;
+  height: 312px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.galleryImage {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Description - Text(font: body) */
+.description {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-button);
+  line-height: 24px;
+  color: var(--color-text);
+  margin: 0;
+  max-width: 1312px;
+}
+
+/* Main Content HStack - remaining height */
+.mainContent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 48px 64px;
+  gap: 40px;
+  width: 100%;
+  max-width: 1440px;
+  flex: 1;
+}
+
+/* TabControl - 50% width */
+.tabControl {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+  width: 50%;
+}
+
+/* Tab Headers */
+.tabHeaders {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.tabButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--color-main);
+  transition: opacity 0.2s ease;
+}
+
+.tabButton:hover {
+  opacity: 0.8;
+}
+
+.activeTab {
+  color: var(--color-main);
+}
+
+/* Tab Divider with active indicator */
+.tabDivider {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background: var(--color-gray-light);
+}
+
+/* Active tab indicator - 85px red line */
+.activeIndicator {
+  position: absolute;
+  width: 85px;
+  height: 5px;
+  background: var(--color-button);
+  top: -1px;
+  transition: left 0.3s ease;
+}
+
+.featuresActive {
+  left: 0;
+}
+
+.reviewsActive {
+  left: 125px; /* 85px + 40px gap for second tab */
+}
+
+/* Tab Content */
+.tabContent {
+  width: 100%;
+}
+
+.reviewsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* BookingFormCard - 50% width */
+.bookingSection {
+  width: 50%;
+  max-width: 641px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .detailsHeader {
+    padding: 32px 32px 0;
+  }
+
+  .mainContent {
+    padding: 32px 32px;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .tabControl,
+  .bookingSection {
+    width: 100%;
+    max-width: none;
+  }
+
+  .imageGallery {
+    gap: 32px;
+  }
+
+  .imageContainer {
+    max-width: 250px;
+    width: auto;
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .detailsHeader {
+    padding: 24px 16px 0;
+  }
+
+  .mainContent {
+    padding: 24px 16px;
+  }
+
+  .camperTitle {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .reviewLocationStack {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .imageGallery {
+    gap: 24px;
+  }
+
+  .imageContainer {
+    max-width: 200px;
+    width: auto;
+    height: 160px;
+  }
+
+  .tabHeaders {
+    gap: 24px;
+  }
+
+  .tabButton {
+    font-size: 18px;
+  }
+}

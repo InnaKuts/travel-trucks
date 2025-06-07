@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import { store } from "./store";
 import Home from "./pages/Home/Home";
 import Catalog from "./pages/Catalog/Catalog";
+import Details from "./pages/Details/Details";
 import DesignCatalog from "./pages/DesignCatalog/DesignCatalog";
 import "./App.css";
 
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/catalog" element={<Catalog />} />
+            <Route path="/catalog/:id" element={<Details />} />
             <Route path="/design" element={<DesignCatalog />} />
           </Routes>
         </div>
