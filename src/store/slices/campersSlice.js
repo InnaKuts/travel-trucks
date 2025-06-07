@@ -1,34 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { campersAPI } from "../../services/api";
 
 // Async thunks for API calls
 export const fetchCampers = createAsyncThunk(
   "campers/fetchCampers",
   async ({ filters = {}, page = 1, limit = 4 }, { rejectWithValue }) => {
     try {
-      const queryParams = new URLSearchParams({
-        page: page.toString(),
-        limit: limit.toString(),
-        ...filters,
-      });
-
-      const response = await fetch(
-        `https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers?${queryParams}`
-      );
-
-      if (!response.ok) {
-        // Treat 404 as empty results, not an error
-        if (response.status === 404) {
-          return { data: [], page, limit };
-        }
-        throw new Error("Failed to fetch campers");
-      }
-
-      let data = await response.json();
-      if (!Array.isArray(data)) {
-        data = data.items || [];
-      }
-
-      return { data, page, limit };
+      const result = await campersAPI.fetchCampers(filters, page, limit);
+      return result;
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -39,16 +18,8 @@ export const fetchCamperById = createAsyncThunk(
   "campers/fetchCamperById",
   async (id, { rejectWithValue }) => {
     try {
-      const response = await fetch(
-        `https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers/${id}`
-      );
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch camper details");
-      }
-
-      const data = await response.json();
-      return data;
+      const result = await campersAPI.fetchCamperById(id);
+      return result;
     } catch (error) {
       return rejectWithValue(error.message);
     }
