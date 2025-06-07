@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createSelector } from "@reduxjs/toolkit";
 
 const filtersSlice = createSlice({
   name: "filters",
@@ -175,26 +175,29 @@ export const selectEquipmentFilters = (state) => state.filters.equipment;
 export const selectFormFilter = (state) => state.filters.form;
 export const selectActiveFilters = (state) => state.filters.activeFilters;
 
-// Helper selector to get API-ready filter object
-export const selectAPIFilters = (state) => {
-  const filters = {};
+// Memoized selector to get API-ready filter object
+export const selectAPIFilters = createSelector(
+  [selectLocationFilter, selectEquipmentFilters, selectFormFilter],
+  (location, equipment, form) => {
+    const filters = {};
 
-  // Add location filter
-  if (state.filters.location.trim()) {
-    filters.location = state.filters.location;
-  }
-
-  // Add equipment filters
-  Object.entries(state.filters.equipment).forEach(([key, value]) => {
-    if (value) {
-      filters[key] = true;
+    // Add location filter
+    if (location.trim()) {
+      filters.location = location;
     }
-  });
 
-  // Add form filter
-  if (state.filters.form) {
-    filters.form = state.filters.form;
+    // Add equipment filters
+    Object.entries(equipment).forEach(([key, value]) => {
+      if (value) {
+        filters[key] = true;
+      }
+    });
+
+    // Add form filter
+    if (form) {
+      filters.form = form;
+    }
+
+    return filters;
   }
-
-  return filters;
-};
+);

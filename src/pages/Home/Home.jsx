@@ -26,7 +26,7 @@ const Home = () => {
             </p>
           </div>
 
-          <Button variant="primary" onClick={handleViewNowClick} s>
+          <Button variant="primary" onClick={handleViewNowClick}>
             View Now
           </Button>
         </div>

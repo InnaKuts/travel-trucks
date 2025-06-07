@@ -44,7 +44,7 @@ const AppNavigation = ({ className = "" }) => {
         </NavLink>
       </nav>
 
-      <div className={styles.spacer}></div>
+      <div className={styles.spacerRight}></div>
     </header>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import AppNavigation from "../../components/features/AppNavigation/AppNavigation";
 import { FiltersSidebar } from "../../components/features/FiltersSidebar/FiltersSidebar";
@@ -18,6 +18,7 @@ import styles from "./Catalog.module.css";
 
 const Catalog = () => {
   const dispatch = useDispatch();
+  const hasInitiallyLoaded = useRef(false);
 
   // Redux selectors
   const campers = useSelector(selectCampers);
@@ -27,12 +28,13 @@ const Catalog = () => {
   const hasMore = useSelector(selectHasMore);
   const apiFilters = useSelector(selectAPIFilters);
 
-  // Load initial campers on mount
+  // Load initial campers on mount (only once)
   useEffect(() => {
-    if (campers.length === 0) {
-      dispatch(fetchCampers({ filters: apiFilters, page: 1 }));
+    if (!hasInitiallyLoaded.current) {
+      dispatch(fetchCampers({ filters: {}, page: 1 }));
+      hasInitiallyLoaded.current = true;
     }
-  });
+  }, [dispatch]);
 
   const handleLoadMore = () => {
     if (hasMore && !loading) {
@@ -63,8 +65,15 @@ const Catalog = () => {
         {/* Main Catalog List */}
         <main className={styles.mainContent}>
           <div className={styles.catalogList}>
-            {/* Error State */}
-            {error && (
+            {/* Loading State */}
+            {loading && campers.length === 0 && (
+              <div className={styles.loadingState}>
+                <Loader text="Loading campers..." />
+              </div>
+            )}
+
+            {/* Error State - only show for actual API errors */}
+            {error && !loading && (
               <div className={styles.errorState}>
                 <p>Error loading campers: {error}</p>
                 <Button
@@ -79,7 +88,7 @@ const Catalog = () => {
             )}
 
             {/* Vehicle Cards */}
-            {campers.length > 0 && (
+            {!error && campers.length > 0 && (
               <div className={styles.vehicleGrid}>
                 {campers.map((camper) => (
                   <VehicleCard
@@ -92,18 +101,11 @@ const Catalog = () => {
               </div>
             )}
 
-            {/* Empty State */}
-            {!loading && campers.length === 0 && !error && (
+            {/* Empty State - no campers and no error */}
+            {!loading && !error && campers.length === 0 && (
               <div className={styles.emptyState}>
                 <h3>No campers found</h3>
                 <p>Try adjusting your filters to see more results.</p>
-              </div>
-            )}
-
-            {/* Loading State */}
-            {loading && campers.length === 0 && (
-              <div className={styles.loadingState}>
-                <Loader text="Loading campers..." />
               </div>
             )}
 

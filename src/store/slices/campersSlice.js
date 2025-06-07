@@ -16,10 +16,18 @@ export const fetchCampers = createAsyncThunk(
       );
 
       if (!response.ok) {
+        // Treat 404 as empty results, not an error
+        if (response.status === 404) {
+          return { data: [], page, limit };
+        }
         throw new Error("Failed to fetch campers");
       }
 
-      const data = await response.json();
+      let data = await response.json();
+      if (!Array.isArray(data)) {
+        data = data.items || [];
+      }
+
       return { data, page, limit };
     } catch (error) {
       return rejectWithValue(error.message);
@@ -112,15 +120,13 @@ const campersSlice = createSlice({
         state.loadingMore = false;
 
         if (page === 1) {
-          state.campers = data.items || data;
+          state.campers = data;
         } else {
-          state.campers = [...state.campers, ...(data.items || data)];
+          state.campers = [...state.campers, ...data];
         }
         state.pagination.page = page;
-        state.pagination.total = data.total || data.length;
-        state.pagination.hasMore = data.items
-          ? data.items.length === state.pagination.limit
-          : false;
+
+        state.pagination.hasMore = data.length === state.pagination.limit;
       })
       .addCase(fetchCampers.rejected, (state, action) => {
         state.loading = false;

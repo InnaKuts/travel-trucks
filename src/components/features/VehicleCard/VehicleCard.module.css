@@ -112,3 +112,85 @@
   margin-top: 24px;
   margin-bottom: 24px;
 }
+
+/* Responsive Design */
+/* Tablet Layout - <= 1200px */
+@media (max-width: 1200px) {
+  .card {
+    padding: var(--spacing-md);
+  }
+
+  .imageContainer {
+    width: 260px;
+  }
+
+  .image {
+    min-height: 280px;
+  }
+
+  .content {
+    min-height: 280px;
+    padding-left: var(--spacing-md);
+  }
+
+  .name {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+
+/* Mobile Layout - <= 768px */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    padding: var(--spacing-md);
+  }
+
+  .imageContainer {
+    width: 100%;
+    order: 1; /* Image on top */
+    margin-bottom: var(--spacing-md);
+  }
+
+  .image {
+    min-height: 200px;
+    width: 100%;
+  }
+
+  .imagePlaceholder {
+    min-height: 200px;
+  }
+
+  .content {
+    order: 2; /* Content below image */
+    padding-left: 0;
+    min-height: auto;
+    width: 100%;
+  }
+
+  .name {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .description {
+    margin-top: var(--spacing-md);
+    /* Allow text to wrap on mobile for better readability */
+    white-space: normal;
+    overflow: visible;
+    text-overflow: initial;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .equipment {
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .reviewLocationRow {
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+}

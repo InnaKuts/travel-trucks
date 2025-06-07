@@ -26,7 +26,7 @@ const VehicleCard = ({ camper, onShowMore, className = "" }) => {
     water: { icon: "water", label: "Water" },
     gas: { icon: "gas", label: "Gas" },
     radio: { icon: "radio", label: "Radio" },
-    refrigerator: { icon: "refrigerator", label: "Refrigerator" },
+    refrigerator: { icon: "fridge", label: "Refrigerator" },
     microwave: { icon: "microwave", label: "Microwave" },
   };
 

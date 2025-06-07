@@ -41,6 +41,10 @@
   flex-grow: 1;
 }
 
+.spacerRight {
+  flex-grow: 1;
+}
+
 .menu {
   display: flex;
   flex-direction: row;
@@ -70,4 +74,47 @@
 .menuItem.active {
   color: var(--color-button);
   font-weight: var(--font-weight-semibold);
+}
+
+/* Responsive Design */
+/* Tablet Layout - <= 1200px */
+@media (max-width: 1200px) {
+  .menu {
+    position: static;
+    transform: none;
+    left: auto;
+    gap: 24px;
+  }
+
+  .spacerRight {
+    display: none;
+  }
+
+  .navigation {
+    padding: 20px 32px;
+  }
+}
+
+/* Mobile Layout - <= 768px */
+@media (max-width: 768px) {
+  .navigation {
+    padding: 16px 20px;
+  }
+
+  .menu {
+    gap: 16px;
+  }
+
+  .menuItem {
+    font-size: 14px;
+  }
+
+  .logo {
+    width: 120px;
+    height: 14px;
+  }
+
+  .logoImage {
+    height: 14px;
+  }
 }
