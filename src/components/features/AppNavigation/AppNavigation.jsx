@@ -34,14 +34,6 @@ const AppNavigation = ({ className = "" }) => {
         >
           Catalog
         </NavLink>
-        <NavLink
-          to="/design"
-          className={({ isActive }) =>
-            isActive ? `${styles.menuItem} ${styles.active}` : styles.menuItem
-          }
-        >
-          Design
-        </NavLink>
       </nav>
 
       <div className={styles.spacerRight}></div>

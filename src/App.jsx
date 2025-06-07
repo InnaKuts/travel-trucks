@@ -1,24 +1,48 @@
+import React, { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import { Toaster } from "react-hot-toast";
 import { store } from "./store";
-import Home from "./pages/Home/Home";
-import Catalog from "./pages/Catalog/Catalog";
-import Details from "./pages/Details/Details";
-import DesignCatalog from "./pages/DesignCatalog/DesignCatalog";
+import Loader from "./components/common/Loader/Loader";
 import "./App.css";
+
+// Lazy load pages for better performance
+const Home = React.lazy(() => import("./pages/Home/Home"));
+const Catalog = React.lazy(() => import("./pages/Catalog/Catalog"));
+const Details = React.lazy(() => import("./pages/Details/Details"));
+const DesignCatalog = React.lazy(() =>
+  import("./pages/DesignCatalog/DesignCatalog")
+);
+
+// Suspense fallback component
+const PageLoader = () => (
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      minHeight: "100vh",
+      flexDirection: "column",
+      gap: "16px",
+    }}
+  >
+    <Loader text="Loading page..." />
+  </div>
+);
 
 function App() {
   return (
     <Provider store={store}>
       <Router>
         <div className="App">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/catalog" element={<Catalog />} />
-            <Route path="/catalog/:id" element={<Details />} />
-            <Route path="/design" element={<DesignCatalog />} />
-          </Routes>
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/catalog" element={<Catalog />} />
+              <Route path="/catalog/:id" element={<Details />} />
+              <Route path="/design" element={<DesignCatalog />} />
+            </Routes>
+          </Suspense>
           <Toaster
             position="top-right"
             toastOptions={{
