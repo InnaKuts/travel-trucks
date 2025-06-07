@@ -322,27 +322,7 @@ const DesignCatalog = () => {
       <section className={styles.section}>
         <h2>Filters Sidebar</h2>
         <div className={styles.column}>
-          <FiltersSidebar
-            location="Ukraine, Kyiv"
-            equipment={{
-              AC: true,
-              automatic: false,
-              kitchen: true,
-              TV: false,
-              bathroom: true,
-            }}
-            vehicleType="panelTruck"
-            onLocationChange={(location) =>
-              console.log("Location changed:", location)
-            }
-            onEquipmentToggle={(equipment) =>
-              console.log("Equipment toggled:", equipment)
-            }
-            onVehicleTypeChange={(type) =>
-              console.log("Vehicle type changed:", type)
-            }
-            onSearch={() => console.log("Search clicked")}
-          />
+          <FiltersSidebar />
         </div>
       </section>
     </div>

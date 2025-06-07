@@ -1,7 +1,19 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Button from "../../common/Button/Button";
 import LocationInput from "../../composite/LocationInput/LocationInput";
 import ToggleButton from "../../composite/ToggleButton/ToggleButton";
+import {
+  selectLocationFilter,
+  selectEquipmentFilters,
+  selectFormFilter,
+  selectAPIFilters,
+  setLocationFilter,
+  toggleEquipmentFilter,
+  setFormFilter,
+  fetchCampers,
+  resetCampers,
+} from "../../../store";
 import styles from "./FiltersSidebar.module.css";
 
 // Equipment filter options
@@ -20,15 +32,38 @@ const VEHICLE_TYPE_OPTIONS = [
   { key: "alcove", label: "Alcove", icon: "alcove" },
 ];
 
-export const FiltersSidebar = ({
-  location = "",
-  equipment = {},
-  vehicleType = "",
-  onLocationChange,
-  onEquipmentToggle,
-  onVehicleTypeChange,
-  onSearch,
-}) => {
+export const FiltersSidebar = () => {
+  const dispatch = useDispatch();
+
+  // Selectors to get data from store
+  const location = useSelector(selectLocationFilter);
+  const equipment = useSelector(selectEquipmentFilters);
+  const vehicleType = useSelector(selectFormFilter);
+  const apiFilters = useSelector(selectAPIFilters);
+
+  // Event handlers
+  const handleLocationChange = (e) => {
+    dispatch(setLocationFilter(e.target.value));
+  };
+
+  const handleEquipmentToggle = (equipmentKey) => {
+    dispatch(toggleEquipmentFilter(equipmentKey));
+  };
+
+  const handleVehicleTypeChange = (newType) => {
+    // Toggle behavior: if same type is clicked, clear it
+    dispatch(setFormFilter(vehicleType === newType ? "" : newType));
+  };
+
+  const handleSearch = () => {
+    dispatch(resetCampers());
+    dispatch(
+      fetchCampers({
+        filters: apiFilters,
+        page: 1,
+      })
+    );
+  };
   return (
     <div className={styles.sidebar}>
       {/* Location Section */}
@@ -36,7 +71,7 @@ export const FiltersSidebar = ({
         <label className={styles.labelSubtle}>Location</label>
         <LocationInput
           value={location}
-          onChange={onLocationChange}
+          onChange={handleLocationChange}
           placeholder="City"
         />
       </div>
@@ -55,7 +90,7 @@ export const FiltersSidebar = ({
                 key={option.key}
                 icon={option.icon}
                 isSelected={equipment[option.key] || false}
-                onClick={() => onEquipmentToggle(option.key)}
+                onClick={() => handleEquipmentToggle(option.key)}
               >
                 {option.label}
               </ToggleButton>
@@ -73,7 +108,7 @@ export const FiltersSidebar = ({
                 key={option.key}
                 icon={option.icon}
                 isSelected={vehicleType === option.key}
-                onClick={() => onVehicleTypeChange(option.key)}
+                onClick={() => handleVehicleTypeChange(option.key)}
               >
                 {option.label}
               </ToggleButton>
@@ -83,7 +118,7 @@ export const FiltersSidebar = ({
       </div>
 
       {/* Search Button */}
-      <Button variant="primary" onClick={onSearch}>
+      <Button variant="primary" onClick={handleSearch}>
         Search
       </Button>
     </div>
