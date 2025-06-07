@@ -1,0 +1,21 @@
+/* 
+ * Global Breakpoint System
+ * 
+ * Usage:
+ * - Desktop: > 1200px (default styles)
+ * - Tablet: <= 1200px 
+ * - Mobile: <= 768px
+ */
+
+:root {
+  /* Breakpoint values */
+  --breakpoint-tablet: 1200px;
+  --breakpoint-mobile: 768px;
+}
+
+/* 
+ * Media Query Mixins (for documentation)
+ * 
+ * @media (max-width: 1200px) { // Tablet Layout }
+ * @media (max-width: 768px)  { // Mobile Layout }
+ */

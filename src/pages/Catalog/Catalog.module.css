@@ -123,33 +123,23 @@
 }
 
 /* Responsive Design */
+/* Tablet Layout - <= 1200px */
 @media (max-width: 1200px) {
-  .catalogContent {
-    padding: 32px 32px 48px;
-    padding-top: calc(72px + 32px); /* Navigation height + content padding */
-    gap: 32px;
-  }
-
-  .sidebar {
-    width: 320px;
-  }
-}
-
-@media (max-width: 1024px) {
   .catalogContent {
     flex-direction: column;
     gap: 32px;
-    padding: 24px 24px 40px;
-    padding-top: calc(72px + 24px); /* Navigation height + content padding */
+    padding: 32px;
+    padding-top: calc(72px + 32px);
   }
 
   .sidebar {
     width: 100%;
-    order: 1;
+    order: 1; /* Filters on top */
   }
 
   .mainContent {
-    order: 2;
+    order: 2; /* Main content below filters */
+    width: 100%;
   }
 
   .vehicleGrid {
@@ -157,14 +147,11 @@
   }
 }
 
+/* Mobile Layout - <= 768px */
 @media (max-width: 768px) {
   .catalogContent {
-    padding: 16px 16px 32px;
-    padding-top: calc(72px + 16px); /* Navigation height + content padding */
-    gap: 24px;
-  }
-
-  .catalogList {
+    padding: 16px;
+    padding-top: calc(72px + 16px);
     gap: 24px;
   }
 
@@ -172,20 +159,17 @@
     gap: 20px;
   }
 
+  .catalogList {
+    gap: 20px;
+  }
+
   .loadMoreContainer {
-    margin-top: 24px;
+    margin-top: 20px;
   }
 
   .loadMoreButton {
     min-width: 140px;
     padding: 14px 32px;
-  }
-}
-
-@media (max-width: 480px) {
-  .catalogContent {
-    padding: 12px 12px 24px;
-    padding-top: calc(72px + 12px); /* Navigation height + content padding */
   }
 
   .emptyState h3 {

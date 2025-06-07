@@ -32,7 +32,7 @@ const Catalog = () => {
     if (campers.length === 0) {
       dispatch(fetchCampers({ filters: apiFilters, page: 1 }));
     }
-  }, [dispatch]); // Remove apiFilters and campers.length from dependencies to prevent infinite loop
+  });
 
   const handleLoadMore = () => {
     if (hasMore && !loading) {
