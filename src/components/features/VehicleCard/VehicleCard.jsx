@@ -1,12 +1,17 @@
+import { useSelector, useDispatch } from "react-redux";
 import PriceDisplay from "../../composite/PriceDisplay/PriceDisplay";
 import LocationInfo from "../../composite/LocationInfo/LocationInfo";
 import ReviewSummary from "../../composite/ReviewSummary/ReviewSummary";
 import Tag from "../../common/Tag/Tag";
 import Favourite from "../../common/Favourite/Favourite";
 import Button from "../../common/Button/Button";
+import { selectIsFavorite, toggleFavorite } from "../../../store";
 import styles from "./VehicleCard.module.css";
 
 const VehicleCard = ({ camper, onShowMore, className = "" }) => {
+  const dispatch = useDispatch();
+  const isFavorite = useSelector(selectIsFavorite(camper?.id));
+
   if (!camper) {
     return null;
   }
@@ -42,6 +47,10 @@ const VehicleCard = ({ camper, onShowMore, className = "" }) => {
     }
   };
 
+  const handleFavoriteToggle = () => {
+    dispatch(toggleFavorite(camper.id));
+  };
+
   return (
     <div className={`${styles.card} ${className}`}>
       {/* Image Section */}
@@ -62,7 +71,7 @@ const VehicleCard = ({ camper, onShowMore, className = "" }) => {
           <h3 className={styles.name}>{camper.name}</h3>
           <div className={styles.spacer}></div>
           <PriceDisplay amount={camper.price} />
-          <Favourite isActive={false} />
+          <Favourite isActive={isFavorite} onClick={handleFavoriteToggle} />
         </div>
 
         {/* Review/location row */}
