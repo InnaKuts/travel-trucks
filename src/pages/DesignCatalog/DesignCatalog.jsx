@@ -1,3 +1,4 @@
+import AppNavigation from "../../components/features/AppNavigation/AppNavigation";
 import Button from "../../components/common/Button/Button";
 import Icon from "../../components/common/Icon/Icon";
 import Tag from "../../components/common/Tag/Tag";
@@ -59,272 +60,275 @@ const DesignCatalog = () => {
 
   return (
     <div className={styles.catalog}>
-      <h1>Design System Catalog</h1>
+      <AppNavigation />
+      <div className={styles.content}>
+        <h1>Design System Catalog</h1>
 
-      <section className={styles.section}>
-        <h2>Color Palette</h2>
-        <div className={styles.row}>
-          <div className={styles.colorBox}>
-            <div
-              className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-main)" }}
-            ></div>
-            <span>Main</span>
-            <code>#101828</code>
+        <section className={styles.section}>
+          <h2>Color Palette</h2>
+          <div className={styles.row}>
+            <div className={styles.colorBox}>
+              <div
+                className={styles.colorSample}
+                style={{ backgroundColor: "var(--color-main)" }}
+              ></div>
+              <span>Main</span>
+              <code>#101828</code>
+            </div>
+            <div className={styles.colorBox}>
+              <div
+                className={styles.colorSample}
+                style={{ backgroundColor: "var(--color-text)" }}
+              ></div>
+              <span>Text</span>
+              <code>#475467</code>
+            </div>
+            <div className={styles.colorBox}>
+              <div
+                className={styles.colorSample}
+                style={{ backgroundColor: "var(--color-gray)" }}
+              ></div>
+              <span>Gray</span>
+              <code>#6C717B</code>
+            </div>
+            <div className={styles.colorBox}>
+              <div
+                className={styles.colorSample}
+                style={{ backgroundColor: "var(--color-gray-light)" }}
+              ></div>
+              <span>Gray Light</span>
+              <code>#DADDE1</code>
+            </div>
+            <div className={styles.colorBox}>
+              <div
+                className={styles.colorSample}
+                style={{ backgroundColor: "var(--color-button)" }}
+              ></div>
+              <span>Button</span>
+              <code>#E44848</code>
+            </div>
+            <div className={styles.colorBox}>
+              <div
+                className={styles.colorSample}
+                style={{ backgroundColor: "var(--color-button-hover)" }}
+              ></div>
+              <span>Button Hover</span>
+              <code>#D84343</code>
+            </div>
+            <div className={styles.colorBox}>
+              <div
+                className={styles.colorSample}
+                style={{ backgroundColor: "var(--color-rating)" }}
+              ></div>
+              <span>Rating</span>
+              <code>#FFC531</code>
+            </div>
+            <div className={styles.colorBox}>
+              <div
+                className={styles.colorSample}
+                style={{ backgroundColor: "var(--color-badges)" }}
+              ></div>
+              <span>Badges</span>
+              <code>#F2F4F7</code>
+            </div>
+            <div className={styles.colorBox}>
+              <div
+                className={styles.colorSample}
+                style={{ backgroundColor: "var(--color-inputs)" }}
+              ></div>
+              <span>Inputs</span>
+              <code>#F7F7F7</code>
+            </div>
+            <div className={styles.colorBox}>
+              <div
+                className={styles.colorSample}
+                style={{ backgroundColor: "var(--color-white)" }}
+              ></div>
+              <span>White</span>
+              <code>#FFFFFF</code>
+            </div>
           </div>
-          <div className={styles.colorBox}>
-            <div
-              className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-text)" }}
-            ></div>
-            <span>Text</span>
-            <code>#475467</code>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Buttons</h2>
+          <div className={styles.row}>
+            <Button variant="primary">Primary Button</Button>
+            <Button variant="secondary">Secondary Button</Button>
+            <Button variant="primary" size="sm">
+              Small
+            </Button>
+            <Button variant="primary" size="lg">
+              Large
+            </Button>
           </div>
-          <div className={styles.colorBox}>
-            <div
-              className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-gray)" }}
-            ></div>
-            <span>Gray</span>
-            <code>#6C717B</code>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Icons</h2>
+          <div className={styles.row}>
+            <Icon name="heart" />
+            <Icon name="heart" variant="filled" />
+            <Icon name="star" />
+            <Icon name="star" variant="filled" />
+            <Icon name="map" />
+            <Icon name="ac" />
+            <Icon name="kitchen" />
+            <Icon name="tv" />
+            <Icon name="automatic" />
           </div>
-          <div className={styles.colorBox}>
-            <div
-              className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-gray-light)" }}
-            ></div>
-            <span>Gray Light</span>
-            <code>#DADDE1</code>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Tags</h2>
+          <div className={styles.row}>
+            <Tag icon="automatic">Automatic</Tag>
+            <Tag icon="ac">AC</Tag>
+            <Tag icon="kitchen">Kitchen</Tag>
+            <Tag icon="water">Water</Tag>
+            <Tag icon="tv">TV</Tag>
           </div>
-          <div className={styles.colorBox}>
-            <div
-              className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-button)" }}
-            ></div>
-            <span>Button</span>
-            <code>#E44848</code>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Favourite</h2>
+          <div className={styles.row}>
+            <Favourite isActive={false} />
+            <Favourite isActive={true} />
           </div>
-          <div className={styles.colorBox}>
-            <div
-              className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-button-hover)" }}
-            ></div>
-            <span>Button Hover</span>
-            <code>#D84343</code>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Rating Stars</h2>
+          <div className={styles.column}>
+            <RatingStars rating={0} />
+            <RatingStars rating={2.5} />
+            <RatingStars rating={4} />
+            <RatingStars rating={5} />
           </div>
-          <div className={styles.colorBox}>
-            <div
-              className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-rating)" }}
-            ></div>
-            <span>Rating</span>
-            <code>#FFC531</code>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Inputs</h2>
+          <div className={styles.column}>
+            <Input placeholder="Name" />
+            <Input placeholder="Email" type="email" />
+            <Input placeholder="Comment" multiline />
           </div>
-          <div className={styles.colorBox}>
-            <div
-              className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-badges)" }}
-            ></div>
-            <span>Badges</span>
-            <code>#F2F4F7</code>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Price Display</h2>
+          <div className={styles.row}>
+            <PriceDisplay amount={8000} />
+            <PriceDisplay amount={12500} />
+            <PriceDisplay amount={999.99} />
           </div>
-          <div className={styles.colorBox}>
-            <div
-              className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-inputs)" }}
-            ></div>
-            <span>Inputs</span>
-            <code>#F7F7F7</code>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Location Info</h2>
+          <div className={styles.column}>
+            <LocationInfo location="Ukraine, Kyiv" />
+            <LocationInfo location="Poland, Warsaw" />
           </div>
-          <div className={styles.colorBox}>
-            <div
-              className={styles.colorSample}
-              style={{ backgroundColor: "var(--color-white)" }}
-            ></div>
-            <span>White</span>
-            <code>#FFFFFF</code>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Review Summary</h2>
+          <div className={styles.column}>
+            <ReviewSummary rating={4.5} reviewCount={42} />
+            <ReviewSummary rating={3.8} reviewCount={15} showLink={false} />
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className={styles.section}>
-        <h2>Buttons</h2>
-        <div className={styles.row}>
-          <Button variant="primary">Primary Button</Button>
-          <Button variant="secondary">Secondary Button</Button>
-          <Button variant="primary" size="sm">
-            Small
-          </Button>
-          <Button variant="primary" size="lg">
-            Large
-          </Button>
-        </div>
-      </section>
+        <section className={styles.section}>
+          <h2>Location Input</h2>
+          <div className={styles.column}>
+            <LocationInput placeholder="City" />
+            <LocationInput placeholder="City" value="Kyiv, Ukraine" />
+          </div>
+        </section>
 
-      <section className={styles.section}>
-        <h2>Icons</h2>
-        <div className={styles.row}>
-          <Icon name="heart" />
-          <Icon name="heart" variant="filled" />
-          <Icon name="star" />
-          <Icon name="star" variant="filled" />
-          <Icon name="map" />
-          <Icon name="ac" />
-          <Icon name="kitchen" />
-          <Icon name="tv" />
-          <Icon name="automatic" />
-        </div>
-      </section>
+        <section className={styles.section}>
+          <h2>Date Picker</h2>
+          <div className={styles.column}>
+            <DatePicker placeholder="Booking date*" />
+            <DatePicker placeholder="Check-in date" selectedDate={new Date()} />
+          </div>
+        </section>
 
-      <section className={styles.section}>
-        <h2>Tags</h2>
-        <div className={styles.row}>
-          <Tag icon="automatic">Automatic</Tag>
-          <Tag icon="ac">AC</Tag>
-          <Tag icon="kitchen">Kitchen</Tag>
-          <Tag icon="water">Water</Tag>
-          <Tag icon="tv">TV</Tag>
-        </div>
-      </section>
+        <section className={styles.section}>
+          <h2>Toggle Buttons</h2>
+          <div className={styles.row}>
+            <ToggleButton icon="van">Van</ToggleButton>
+            <ToggleButton icon="intergrated" isSelected>
+              Fully Integrated
+            </ToggleButton>
+            <ToggleButton icon="alcove">Alcove</ToggleButton>
+          </div>
+        </section>
 
-      <section className={styles.section}>
-        <h2>Favourite</h2>
-        <div className={styles.row}>
-          <Favourite isActive={false} />
-          <Favourite isActive={true} />
-        </div>
-      </section>
+        <section className={styles.section}>
+          <h2>Feature Details Card</h2>
+          <div className={styles.column}>
+            <FeatureDetailsCard camper={sampleCamper} />
+          </div>
+        </section>
 
-      <section className={styles.section}>
-        <h2>Rating Stars</h2>
-        <div className={styles.column}>
-          <RatingStars rating={0} />
-          <RatingStars rating={2.5} />
-          <RatingStars rating={4} />
-          <RatingStars rating={5} />
-        </div>
-      </section>
+        <section className={styles.section}>
+          <h2>Loader</h2>
+          <div className={styles.column}>
+            <Loader />
+            <Loader text="Loading campers..." />
+            <Loader size={24} text="Please wait..." />
+          </div>
+        </section>
 
-      <section className={styles.section}>
-        <h2>Inputs</h2>
-        <div className={styles.column}>
-          <Input placeholder="Name" />
-          <Input placeholder="Email" type="email" />
-          <Input placeholder="Comment" multiline />
-        </div>
-      </section>
+        <section className={styles.section}>
+          <h2>Review Card</h2>
+          <div className={styles.column}>
+            <ReviewCard
+              reviewerName="Alice"
+              rating={5}
+              comment="The Mavericks panel truck was a perfect choice for my solo road trip. Compact, easy to drive, and had all the essentials. The kitchen facilities were sufficient, and the overall experience was fantastic."
+            />
+            <ReviewCard
+              reviewerName="Bob"
+              rating={4}
+              comment="Great experience! The camper was clean and well-equipped. Would definitely book again."
+            />
+          </div>
+        </section>
 
-      <section className={styles.section}>
-        <h2>Price Display</h2>
-        <div className={styles.row}>
-          <PriceDisplay amount={8000} />
-          <PriceDisplay amount={12500} />
-          <PriceDisplay amount={999.99} />
-        </div>
-      </section>
+        <section className={styles.section}>
+          <h2>Booking Form Card</h2>
+          <div className={styles.column}>
+            <BookingFormCard
+              onSubmit={(values) => console.log("Booking submitted:", values)}
+            />
+          </div>
+        </section>
 
-      <section className={styles.section}>
-        <h2>Location Info</h2>
-        <div className={styles.column}>
-          <LocationInfo location="Ukraine, Kyiv" />
-          <LocationInfo location="Poland, Warsaw" />
-        </div>
-      </section>
+        <section className={styles.section}>
+          <h2>Vehicle Card</h2>
+          <div className={styles.column}>
+            <VehicleCard
+              camper={sampleCamper}
+              onShowMore={(id) =>
+                console.log(`Show more clicked for camper: ${id}`)
+              }
+            />
+          </div>
+        </section>
 
-      <section className={styles.section}>
-        <h2>Review Summary</h2>
-        <div className={styles.column}>
-          <ReviewSummary rating={4.5} reviewCount={42} />
-          <ReviewSummary rating={3.8} reviewCount={15} showLink={false} />
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <h2>Location Input</h2>
-        <div className={styles.column}>
-          <LocationInput placeholder="City" />
-          <LocationInput placeholder="City" value="Kyiv, Ukraine" />
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <h2>Date Picker</h2>
-        <div className={styles.column}>
-          <DatePicker placeholder="Booking date*" />
-          <DatePicker placeholder="Check-in date" selectedDate={new Date()} />
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <h2>Toggle Buttons</h2>
-        <div className={styles.row}>
-          <ToggleButton icon="van">Van</ToggleButton>
-          <ToggleButton icon="intergrated" isSelected>
-            Fully Integrated
-          </ToggleButton>
-          <ToggleButton icon="alcove">Alcove</ToggleButton>
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <h2>Feature Details Card</h2>
-        <div className={styles.column}>
-          <FeatureDetailsCard camper={sampleCamper} />
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <h2>Loader</h2>
-        <div className={styles.column}>
-          <Loader />
-          <Loader text="Loading campers..." />
-          <Loader size={24} text="Please wait..." />
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <h2>Review Card</h2>
-        <div className={styles.column}>
-          <ReviewCard
-            reviewerName="Alice"
-            rating={5}
-            comment="The Mavericks panel truck was a perfect choice for my solo road trip. Compact, easy to drive, and had all the essentials. The kitchen facilities were sufficient, and the overall experience was fantastic."
-          />
-          <ReviewCard
-            reviewerName="Bob"
-            rating={4}
-            comment="Great experience! The camper was clean and well-equipped. Would definitely book again."
-          />
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <h2>Booking Form Card</h2>
-        <div className={styles.column}>
-          <BookingFormCard
-            onSubmit={(values) => console.log("Booking submitted:", values)}
-          />
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <h2>Vehicle Card</h2>
-        <div className={styles.column}>
-          <VehicleCard
-            camper={sampleCamper}
-            onShowMore={(id) =>
-              console.log(`Show more clicked for camper: ${id}`)
-            }
-          />
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <h2>Filters Sidebar</h2>
-        <div className={styles.column}>
-          <FiltersSidebar />
-        </div>
-      </section>
+        <section className={styles.section}>
+          <h2>Filters Sidebar</h2>
+          <div className={styles.column}>
+            <FiltersSidebar />
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

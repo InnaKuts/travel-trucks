@@ -1,0 +1,130 @@
+/* Home Page */
+.homePage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--color-white);
+}
+
+/* Hero Section */
+.heroSection {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-height: calc(100vh - 72px); /* Account for navigation height */
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Hero Background */
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* Hero Content */
+.heroContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 0 64px;
+  z-index: 1;
+}
+
+/* Text Content */
+.textContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Title */
+.title {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 1.17; /* 56px / 48px = 1.17 for better readability */
+  color: var(--color-inputs); /* #F7F7F7 - light color for dark background */
+  margin: 0;
+  width: 100%;
+}
+
+/* Subtitle */
+.subtitle {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33; /* 32px / 24px */
+  color: var(--color-inputs); /* #F7F7F7 - light color for dark background */
+  margin: 0;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .heroContent {
+    padding: 0 32px;
+    width: 60%;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContent {
+    padding: 0 24px;
+    width: 80%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .textContent {
+    align-items: center;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent {
+    width: 90%;
+    padding: 0 16px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+}
