@@ -9,6 +9,7 @@ import FeatureDetailsCard from "../../components/features/FeatureDetailsCard/Fea
 import BookingFormCard from "../../components/features/BookingFormCard/BookingFormCard";
 import ReviewCard from "../../components/composite/ReviewCard/ReviewCard";
 import Loader from "../../components/common/Loader/Loader";
+import ImageModal from "../../components/common/ImageModal/ImageModal";
 import {
   selectCurrentCamper,
   selectCamperLoading,
@@ -31,11 +32,37 @@ const Details = () => {
 
   const [activeTab, setActiveTab] = useState(getInitialTab());
 
+  // Image modal state
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   // Handle tab change with URL hash update
   const handleTabChange = (tabName) => {
     setActiveTab(tabName);
     const hash = tabName === "Reviews" ? "#reviews" : "";
     navigate(`/catalog/${id}${hash}`, { replace: true });
+  };
+
+  // Image modal handlers
+  const handleImageClick = (index) => {
+    setCurrentImageIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handlePreviousImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex > 0 ? prevIndex - 1 : prevIndex
+    );
+  };
+
+  const handleNextImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex < (camper?.gallery?.length || 0) - 1 ? prevIndex + 1 : prevIndex
+    );
   };
 
   // Listen for hash changes (browser back/forward)
@@ -127,6 +154,8 @@ const Details = () => {
                 src={image.thumb}
                 alt={`${camper.name} image ${index + 1}`}
                 className={styles.galleryImage}
+                onClick={() => handleImageClick(index)}
+                style={{ cursor: "pointer" }}
               />
             </div>
           ))}
@@ -194,6 +223,18 @@ const Details = () => {
           <BookingFormCard />
         </div>
       </div>
+
+      {/* Image Modal */}
+      <ImageModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        image={camper?.gallery?.[currentImageIndex]}
+        camperName={camper?.name}
+        currentIndex={currentImageIndex}
+        totalImages={camper?.gallery?.length || 0}
+        onPrevious={handlePreviousImage}
+        onNext={handleNextImage}
+      />
     </div>
   );
 };
