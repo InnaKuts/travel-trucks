@@ -1,4 +1,4 @@
-import RatingStars from "../RatingStars/RatingStars";
+import Icon from "../../common/Icon/Icon";
 import styles from "./ReviewSummary.module.css";
 
 const ReviewSummary = ({
@@ -9,7 +9,7 @@ const ReviewSummary = ({
 }) => {
   return (
     <div className={`${styles.summary} ${className}`}>
-      <RatingStars rating={rating} />
+      <Icon name="star" variant="filled" className={styles.star} />
       {showLink ? (
         <a href="#reviews" className={styles.link}>
           {rating} ({reviewCount} Reviews)

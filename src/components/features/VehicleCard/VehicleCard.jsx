@@ -87,6 +87,8 @@ const VehicleCard = ({ camper, onShowMore, className = "" }) => {
           ))}
         </div>
 
+        <div className={styles.spacer}></div>
+
         {/* Show more button */}
         <Button variant="primary" onClick={handleShowMore}>
           Show more

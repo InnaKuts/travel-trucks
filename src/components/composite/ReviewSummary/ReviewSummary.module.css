@@ -4,6 +4,10 @@
   gap: var(--spacing-sm);
 }
 
+.star {
+  color: var(--color-rating);
+}
+
 .link {
   color: var(--color-main);
   text-decoration: underline;

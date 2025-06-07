@@ -4,7 +4,7 @@
   justify-content: center;
   gap: var(--spacing-sm);
   font-family: var(--font-family);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-normal);
   border-radius: var(--radius-lg);
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease;

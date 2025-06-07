@@ -8,21 +8,23 @@
   border-radius: var(--radius-md);
   overflow: hidden;
   width: 100%;
+  padding: var(--spacing-lg);
 }
 
 /* Image Section - aspect ratio 292/320 ≈ 0.9125 */
 .imageContainer {
   flex-shrink: 0;
   width: 292px;
-  height: 320px;
   overflow: hidden;
 }
 
 .image {
   width: 100%;
   height: 100%;
+  min-height: 320px;
   object-fit: cover;
   object-position: center;
+  border-radius: var(--radius-sm);
 }
 
 .imagePlaceholder {
@@ -43,13 +45,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--spacing-md);
-  padding: var(--spacing-lg);
+  padding: 0 0 0 var(--spacing-lg);
   flex: 1;
-  height: 320px;
+  min-height: 320px;
+  width: 100%;
   justify-content: flex-start;
   min-width: 0;
-  overflow: hidden;
 }
 
 /* Header row: Name + Spacer + Price + Favourite */
@@ -79,6 +80,7 @@
   align-items: center;
   gap: var(--spacing-md);
   width: 100%;
+  margin-top: 8px;
 }
 
 /* Description - single line with ellipsis */
@@ -89,6 +91,7 @@
   line-height: 24px;
   color: var(--color-text);
   margin: 0;
+  margin-top: 24px;
   width: 100%;
   min-width: 0;
 
@@ -106,4 +109,6 @@
   align-items: flex-start;
   width: 100%;
   min-width: 0;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
