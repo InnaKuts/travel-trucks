@@ -69,10 +69,8 @@ const Details = () => {
   useEffect(() => {
     const hash = location.hash.substring(1);
     const newTab = hash === "reviews" ? "Reviews" : "Features";
-    if (newTab !== activeTab) {
-      setActiveTab(newTab);
-    }
-  }, [location.hash, activeTab]);
+    setActiveTab(newTab);
+  }, [location.hash]);
 
   // Redux selectors
   const camper = useSelector(selectCurrentCamper);
@@ -139,6 +137,7 @@ const Details = () => {
           <ReviewSummary
             rating={camper?.rating}
             reviewCount={camper?.reviews?.length || 0}
+            onReviewsClick={() => handleTabChange("Reviews")}
           />
           <LocationInfo location={camper?.location} />
         </div>

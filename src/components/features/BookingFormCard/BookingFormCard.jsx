@@ -52,8 +52,9 @@ const BookingFormCard = ({ onSubmit, className = "" }) => {
     if (errors.length > 0) {
       toast.dismiss();
       toast.error(errors[0]);
+      formik.setErrors({});
     }
-  }, [formik.errors]);
+  }, [formik.errors, formik]);
 
   const handleDateChange = (date) => {
     formik.setFieldValue("bookingDate", date);

@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import AppNavigation from "../../components/features/AppNavigation/AppNavigation";
 import { FiltersSidebar } from "../../components/features/FiltersSidebar/FiltersSidebar";
 import VehicleCard from "../../components/features/VehicleCard/VehicleCard";
@@ -19,7 +18,6 @@ import styles from "./Catalog.module.css";
 
 const Catalog = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const hasInitiallyLoaded = useRef(false);
 
   // Redux selectors
@@ -50,7 +48,7 @@ const Catalog = () => {
   };
 
   const handleShowMore = (camperId) => {
-    navigate(`/catalog/${camperId}`);
+    window.open(`/catalog/${camperId}`, "_blank", "noopener,noreferrer");
   };
 
   return (

@@ -1,5 +1,4 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import PriceDisplay from "../../composite/PriceDisplay/PriceDisplay";
 import LocationInfo from "../../composite/LocationInfo/LocationInfo";
 import ReviewSummary from "../../composite/ReviewSummary/ReviewSummary";
@@ -11,7 +10,6 @@ import styles from "./VehicleCard.module.css";
 
 const VehicleCard = ({ camper, onShowMore, className = "" }) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const isFavorite = useSelector(selectIsFavorite(camper?.id));
 
   if (!camper) {
@@ -44,7 +42,7 @@ const VehicleCard = ({ camper, onShowMore, className = "" }) => {
     if (onShowMore) {
       onShowMore(camper.id);
     } else {
-      navigate(`/catalog/${camper.id}`);
+      window.open(`/catalog/${camper.id}`, "_blank", "noopener,noreferrer");
     }
   };
 
@@ -53,7 +51,11 @@ const VehicleCard = ({ camper, onShowMore, className = "" }) => {
   };
 
   const handleReviewsClick = () => {
-    navigate(`/catalog/${camper.id}#reviews`);
+    window.open(
+      `/catalog/${camper.id}#reviews`,
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   return (

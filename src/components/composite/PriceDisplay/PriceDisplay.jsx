@@ -5,6 +5,7 @@ const PriceDisplay = ({ amount, currency = "EUR", className = "" }) => {
     const formatted = new Intl.NumberFormat("en-US", {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
+      useGrouping: false,
     }).format(price);
 
     return curr === "EUR" ? `€${formatted}` : `$${formatted}`;
